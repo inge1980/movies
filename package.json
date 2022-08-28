@@ -1,6 +1,7 @@
 {
   "name": "movie_db",
   "version": "0.1.0",
+  "homepage": "https://inge1980.github.io/react_movieDB/",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.2.0",
@@ -16,6 +17,8 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -32,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
