@@ -4,7 +4,7 @@
   "homepage": "https://inge1980.github.io/movies/",
   "private": true,
   "dependencies": {
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^4.6.2",
     "bootstrapjs": "^2.0.0",
     "font-awesome": "^4.7.0",
     "joi-browser": "13.4",

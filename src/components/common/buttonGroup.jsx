@@ -1,20 +1,21 @@
 import React from "react";
 
-const ListGroup = ({
+const ButtonGroup = ({
   items,
   textProperty,
   valueProperty,
   onItemSelect,
   selectedItem
 }) => {
-  console.log("ListGroup - Rendered");
-  const classes = "list-group-item list-group-item-action";
+  console.log("ButtonGroup - Rendered");
+  const classes = "btn btn-outline-primary border";
 
   return (
     <React.Fragment>
-      <div className="list-group d-none d-md-flex">
+      <div className="btn-group d-flex d-md-none">
         {items.map((item) => (
-          <a
+          <button
+            type="button"
             onClick={() => onItemSelect(item)}
             href="#"
             key={item[valueProperty]}
@@ -22,7 +23,7 @@ const ListGroup = ({
             aria-current="true"
           >
             {item[textProperty]}
-          </a>
+          </button>
         ))}
         {/* <li class="list-group-item">Second</li> */}
       </div>
@@ -30,9 +31,9 @@ const ListGroup = ({
   );
 };
 
-ListGroup.defaultProps = {
+ButtonGroup.defaultProps = {
   textProperty: "name",
   valueProperty: "_id"
 };
 
-export default ListGroup;
+export default ButtonGroup;

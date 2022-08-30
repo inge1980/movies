@@ -2,6 +2,7 @@ import React from "react"; // , { Component } comes from Form
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 import ListGroup from "./common/listGroup";
+import ButtonGroup from "./common/buttonGroup";
 import Pagination from "./common/pagination";
 import MoviesTable from "./moviesTable";
 import Input from "./common/input";
@@ -160,15 +161,20 @@ class Movies extends Form {
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-3 mt-3">
+            <div className="col-12 mt-3 col-md-3">
               <ListGroup
+                items={genres}
+                selectedItem={selectedGenre}
+                onItemSelect={this.handleGenreSelect}
+              />
+              <ButtonGroup
                 items={genres}
                 selectedItem={selectedGenre}
                 onItemSelect={this.handleGenreSelect}
               />
             </div>
             {/* <!-- /.col-3 --> */}
-            <div className="col-9">
+            <div className="col-12 col-md-9">
               {/* {this.renderButton("New Movie")} */}
               <Link to="movies/new" className="btn btn-primary my-3">
                 New Movie
