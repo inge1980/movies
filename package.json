@@ -1,7 +1,7 @@
 {
-  "name": "movie_db",
+  "name": "movies",
   "version": "0.1.0",
-  "homepage": "https://inge1980.github.io/react_movieDB/",
+  "homepage": "https://inge1980.github.io/movies/",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.2.0",
