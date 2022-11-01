@@ -4,9 +4,10 @@ import LoginForm from "./components/loginForm";
 import Home from "./components/home";
 import NotFound from "./components/common/notFound";
 import MovieForm from "./components/movieForm";
-import "bootstrap/dist/css/bootstrap.css";
-import NavBar from "./components/common/navbar";
+import BootstrapNavBar from "./components/common/navbar";
 import { Route, Switch, Redirect } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "./styles.css";
 
 class App extends Component {
   state = {};
@@ -16,7 +17,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <NavBar />
+        <BootstrapNavBar />
         <div className="content">
           <Switch>
             <Route path="/movies/:id" component={MovieForm} />

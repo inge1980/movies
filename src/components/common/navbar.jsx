@@ -1,39 +1,54 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { Component } from "react";
+import { Nav, Navbar, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const NavBar = () => {
-  return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        imdb (Inge Movie Database)
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+class BootstrapNavbar extends Component {
+  state = {
+    expanded: false,
+  };
+  setExpanded = (expanded) => this.setState({ expanded: expanded });
+  handleClose = () => this.setState({ expanded: false });
+
+  render() {
+    var expand = "md";
+    return (
+      <Navbar
+        sticky="top"
+        key={expand}
+        bg="light"
+        expand={expand}
+        className="mb-3"
+        onToggle={this.setExpanded}
+        expanded={this.state.expanded}
       >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse navbar-expand" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/movies">
-              Movies
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
-              Log in
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
+        <Container fluid>
 
-export default NavBar;
+
+
+          <Navbar.Brand as="div" href="#" className="" onClick={this.handleClose}>
+            <Link to="/portfolio/" className="navbar-brand text-truncate">
+              imdb (Inge Movie Database)
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+          <Navbar.Collapse id={`offcanvasNavbar-expand-${expand}`}>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav.Link as="div" href="#" onClick={this.handleClose}>
+                <Link to="/movies" className="nav-link">
+                  Movies
+                </Link>                  
+              </Nav.Link>
+              <Nav.Link as="div" href="#" onClick={this.handleClose}>
+                <Link to="/login" className="nav-link">
+                  Log in
+                </Link>                  
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+}
+
+export default BootstrapNavbar;

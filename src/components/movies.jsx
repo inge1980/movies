@@ -176,7 +176,7 @@ class Movies extends Form {
             {/* <!-- /.col-3 --> */}
             <div className="col-12 col-md-9">
               {/* {this.renderButton("New Movie")} */}
-              <Link to="new" className="btn btn-primary my-3">
+              <Link to="movies/new" className="btn btn-primary my-3">
                 New Movie
               </Link>
               <p className="my-0 mb-n3">

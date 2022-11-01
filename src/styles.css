@@ -5,3 +5,8 @@
 .clickable {
   cursor: pointer;
 }
+@media screen and (max-width: 380px) {
+  a.text-truncate {
+    max-width: 70px;
+  }    
+}
