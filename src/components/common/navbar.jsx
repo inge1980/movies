@@ -26,7 +26,7 @@ class BootstrapNavbar extends Component {
 
 
           <Navbar.Brand as="div" href="#" className="" onClick={this.handleClose}>
-            <Link to="/portfolio/" className="navbar-brand text-truncate">
+            <Link to="/movies/" className="navbar-brand text-truncate">
               imdb (Inge Movie Database)
             </Link>
           </Navbar.Brand>
@@ -34,7 +34,7 @@ class BootstrapNavbar extends Component {
           <Navbar.Collapse id={`offcanvasNavbar-expand-${expand}`}>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link as="div" href="#" onClick={this.handleClose}>
-                <Link to="/movies" className="nav-link">
+                <Link to="/movies/" className="nav-link">
                   Movies
                 </Link>                  
               </Nav.Link>
